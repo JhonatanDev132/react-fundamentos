@@ -1,18 +1,10 @@
-import React from "react";
+import Cabecalho from "./Cabecalho";
 
 /* Sempre os componentes tem que ser começar com maiúsculas */
 function App() {
   return (
     <>
-      <header>
-        <h1>Olá React!</h1>
-        <hr />
-        <nav>
-          <a href="">Home</a>
-          <a href="">Produtos</a>
-          <a href="">Contato</a>
-        </nav>
-      </header>
+      <Cabecalho />
 
       <main>
         <h2>Teste</h2>
