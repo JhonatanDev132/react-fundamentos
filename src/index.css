@@ -19,4 +19,17 @@ html {
 
 .sombra {
   box-shadow: gray 0 0 10px;
+  background-color: aliceblue;
+  color: black;
+}
+
+.destaque-texto {
+  background-color: yellow;
+  padding: 4px;
+  border-radius: 4px;
+  color: black;
+}
+
+.centralizar {
+  text-align: center;
 }

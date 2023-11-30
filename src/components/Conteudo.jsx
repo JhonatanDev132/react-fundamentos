@@ -25,7 +25,9 @@ function Conteudo() {
         </p>
 
         <Artigos />
+        <hr />
         <Artigos />
+        <hr />
         <Artigos />
       </section>
     </main>
