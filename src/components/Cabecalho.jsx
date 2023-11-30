@@ -11,9 +11,9 @@ function Cabecalho() {
         <span className={estilos.sombra}>React!</span>
       </h1>
       <hr />
-      <p className={`${estilos["destaque-texto"]} centralizar`}>
-        Classes combinadas
-      </p>
+      <p>Classes combinadas</p>
+
+      {/* nav */}
       <Menu />
     </header>
   );

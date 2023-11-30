@@ -1,18 +1,11 @@
 function Rodape() {
-  const exemploEstilo = {
-    backgroundColor: "gray",
-    padding: "2%",
-    color: "white",
-    border: "solid 4px gray",
-  };
-
   return (
-    <footer style={exemploEstilo}>
-      <h2 style={{ textAlign: "center" }}>Rodapé da aplicação</h2>
-      <p className="destaque-texto centralizar">Fundamentos de React</p>
+    <footer className="rodape">
+      <h2>Rodapé</h2>
+      <p className="centralizar">Fundamentos de React</p>
       <p>
         <label htmlFor=""></label>
-        Experimentando <b className="sombra">classes</b>
+        Experimentando <b>classes</b>
       </p>
     </footer>
   );

@@ -1,8 +1,3 @@
-.sombra {
-  text-shadow: yellow 2px 2px 5px;
-  background-color: white;
-}
-
 hr {
   border: none;
   height: 1px;
@@ -11,6 +6,24 @@ hr {
   margin: auto;
 }
 
-.destaque-texto {
-  text-transform: uppercase;
+header {
+  height: 5rem;
+  background-color: black;
+  color: aliceblue;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+nav a {
+  padding-left: 2rem;
+  padding-right: 1rem;
+  text-decoration: none;
+  color: aliceblue;
+}
+
+nav a:hover {
+  color: #00d4ff;
 }

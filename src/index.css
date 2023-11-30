@@ -2,6 +2,7 @@
 *::after,
 *::before {
   box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body,
@@ -17,17 +18,46 @@ html {
   font-size: 18px;
 }
 
-.sombra {
-  box-shadow: gray 0 0 10px;
-  background-color: aliceblue;
-  color: black;
+h2 {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 10px;
 }
 
-.destaque-texto {
-  background-color: yellow;
-  padding: 4px;
-  border-radius: 4px;
-  color: black;
+h3 {
+  margin: 10px;
+  padding-top: 10px;
+}
+
+hr {
+  width: 90%;
+  text-align: center;
+}
+
+p {
+  margin: 10px;
+  padding-bottom: 15px;
+}
+
+.rodape {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, #020024 0%, #302c9b 43%, #00d4ff 100%);
+  color: aliceblue;
+  height: 8rem;
+  position: relative;
+  top: 3rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.rodape h2 {
+  font-size: 18px;
+}
+
+.rodape p {
+  font-size: 22px;
 }
 
 .centralizar {
