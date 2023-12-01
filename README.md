@@ -27,3 +27,4 @@ JSX -> HTML + JS para criar componentes
 A renderização ocorre na seguinte sequencia:
 
 index.html <- main.jsx <- App.jsx
+``

@@ -1,0 +1,23 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+hr {
+  margin: 0;
+  padding: 0;
+}
