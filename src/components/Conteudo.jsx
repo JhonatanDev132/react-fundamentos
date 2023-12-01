@@ -9,6 +9,13 @@ const StyledConteudo = styled.main`
   background-color: aliceblue;
   padding: 1rem;
   box-shadow: darkblue 0 0 1px inset;
+
+  @media screen and (min-width: 650px) {
+    div {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
 `;
 
 function Conteudo() {
@@ -35,9 +42,11 @@ function Conteudo() {
           voluptate modi sint quas iure.
         </p>
 
-        <Artigos />
-        <Artigos />
-        <Artigos />
+        <div>
+          <Artigos />
+          <Artigos />
+          <Artigos />
+        </div>
       </section>
     </StyledConteudo>
   );
