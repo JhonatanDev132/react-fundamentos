@@ -1,8 +1,17 @@
+import styled from "styled-components";
 import Artigos from "./Artigos";
+
+const StyledConteudo = styled.main`
+  width: 90vw;
+  margin: 1rem auto;
+  background-color: aliceblue;
+  padding: 1rem;
+  box-shadow: darkblue 0 0 1px inset;
+`;
 
 function Conteudo() {
   return (
-    <main>
+    <StyledConteudo>
       <h2>Teste</h2>
       <section>
         <p>
@@ -28,7 +37,7 @@ function Conteudo() {
         <Artigos />
         <Artigos />
       </section>
-    </main>
+    </StyledConteudo>
   );
 }
 
