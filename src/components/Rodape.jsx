@@ -1,3 +1,7 @@
+import styled from "styled-components";
+
+const StyledRodape = styled.footer``;
+
 function Rodape() {
   return (
     <footer>

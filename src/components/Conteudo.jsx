@@ -3,6 +3,8 @@ import Artigos from "./Artigos";
 
 const StyledConteudo = styled.main`
   width: 90vw;
+  position: relative;
+  top: 5rem;
   margin: 1rem auto;
   background-color: aliceblue;
   padding: 1rem;
