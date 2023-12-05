@@ -18,6 +18,12 @@ const StyledConteudo = styled.main`
   }
 `;
 
+const dataLivro = [
+  "26 de junho de 1997",
+  "2 de julho de 1998",
+  "8 de julho de 1999",
+];
+
 function Conteudo() {
   return (
     <StyledConteudo>
@@ -42,21 +48,24 @@ function Conteudo() {
           voluptate modi sint quas iure.
         </p>
 
-        <div>
+        <div className="artigos">
           <Artigos
-            icone="😜"
-            titulo="Senhor dos Anéis"
-            descricao="Livro criado por Tokien"
+            icone="🧙‍♂️"
+            titulo="Harry Potter e a Pedra Filosofal"
+            dataLivro={dataLivro[0]}
+            descricao="Livro criado por J.K Rowlling."
           />
           <Artigos
-            icone="🐱‍🐉"
-            titulo="Game of Thrones"
-            descricao="Aventura maluca com gente sempre morrendo"
+            icone="🧙‍♀️"
+            titulo="Harry Potter e a Câmara Secreta"
+            dataLivro={dataLivro[1]}
+            descricao="O Bixo ruim volta mais Jovem."
           />
           <Artigos
-            icone="🤷‍♀️"
-            titulo="HTML5 e CSS3"
-            descricao="Fonte de estudos para quem quer começar no Front-End"
+            icone="🧹"
+            titulo="Harry Potter e o Prisioneiro de Azkaban"
+            dataLivro={dataLivro[2]}
+            descricao="Bandido Mal corre da cadeia."
           />
         </div>
       </section>

@@ -22,7 +22,11 @@ function Artigos(props) {
   return (
     <>
       <StyledArtigos>
-        <h3> {props.titulo} </h3>
+        <h3>
+          <span>{props.icone}</span>
+          {props.titulo}
+        </h3>
+        <p>{props.dataLivro}</p>
         <p> {props.descricao} </p>
       </StyledArtigos>
     </>
