@@ -22,6 +22,7 @@ function Artigos(props) {
   return (
     <>
       <StyledArtigos>
+        <img src={props.imagem} alt="" />
         <h3>
           <span>{props.icone}</span>
           {props.titulo}

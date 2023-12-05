@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import Artigos from "./Artigos";
 
+/* Importando os assets de imagem */
+import imagem1 from "../assets/abra-o-livro.png";
+import imagem2 from "../assets/livro-magico.png";
+import imagem3 from "../assets/pilha-de-livros.png";
+
 const StyledConteudo = styled.main`
   width: 90vw;
   position: relative;
@@ -50,18 +55,21 @@ function Conteudo() {
 
         <div className="artigos">
           <Artigos
+            imagem={imagem1}
             icone="🧙‍♂️"
             titulo="Harry Potter e a Pedra Filosofal"
             dataLivro={dataLivro[0]}
             descricao="Livro criado por J.K Rowlling."
           />
           <Artigos
+            imagem={imagem2}
             icone="🧙‍♀️"
             titulo="Harry Potter e a Câmara Secreta"
             dataLivro={dataLivro[1]}
             descricao="O Bixo ruim volta mais Jovem."
           />
           <Artigos
+            imagem={imagem3}
             icone="🧹"
             titulo="Harry Potter e o Prisioneiro de Azkaban"
             dataLivro={dataLivro[2]}
