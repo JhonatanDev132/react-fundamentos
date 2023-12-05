@@ -1,13 +1,9 @@
 import styled from "styled-components";
 import Artigos from "./Artigos";
-
-/* Importando os assets de imagem */
-import imagem1 from "../assets/abra-o-livro.png";
-import imagem2 from "../assets/livro-magico.png";
-import imagem3 from "../assets/pilha-de-livros.png";
+import cursos from "../api/cursos.js";
 
 const StyledConteudo = styled.main`
-  width: 90vw;
+  width: 90dvw\ ;
   position: relative;
   top: 5rem;
   margin: 1rem auto;
@@ -16,18 +12,20 @@ const StyledConteudo = styled.main`
   box-shadow: darkblue 0 0 1px inset;
 
   @media screen and (min-width: 650px) {
-    div {
+    .artigos {
+      padding-top: 2rem;
       display: flex;
-      justify-content: space-evenly;
+      margin: auto;
+      flex-wrap: wrap;
+      width: 80%;
+      justify-content: space-between;
+
+      & article {
+        width: 48%;
+      }
     }
   }
 `;
-
-const dataLivro = [
-  "26 de junho de 1997",
-  "2 de julho de 1998",
-  "8 de julho de 1999",
-];
 
 function Conteudo() {
   return (
@@ -54,58 +52,19 @@ function Conteudo() {
         </p>
 
         <div className="artigos">
-          <Artigos
-            imagem={imagem1}
-            icone="🧙‍♂️"
-            titulo="Harry Potter e a Pedra Filosofal"
-            dataLivro={dataLivro[0]}
-            descricao="Livro criado por J.K Rowlling."
-          >
-            <h4>Personagens:</h4>
-            <ul>
-              <li>Harry Potter</li>
-              <li>Rony Weasley</li>
-              <li>Hermione Granger</li>
-              <li>Alvo Dumbledore</li>
-              <li>Rubeus Hagrid</li>
-              <li>Minerva McGonagal</li>
-              <li>Severus Snape</li>
-              <li>Draco Malfoy</li>
-            </ul>
-          </Artigos>
-          <Artigos
-            imagem={imagem2}
-            icone="🧙‍♀️"
-            titulo="Harry Potter e a Câmara Secreta"
-            dataLivro={dataLivro[1]}
-            descricao="O Bixo ruim volta mais Jovem."
-          >
-            <h4>Mais personagens:</h4>
-            <ol>
-              <li>Tom Reddle</li>
-              <li>Murta que geme</li>
-              <li>Cho Yang</li>
-              <li>Gina Weasley</li>
-            </ol>
-          </Artigos>
-          <Artigos
-            imagem={imagem3}
-            icone="🧹"
-            titulo="Harry Potter e o Prisioneiro de Azkaban"
-            dataLivro={dataLivro[2]}
-            descricao="Bandido Mal corre da cadeia."
-          >
-            <h4>Opinião:</h4>
-            <details>
-              <summary>Filme:</summary>
-              <p>
-                Para mim o Prisioneiro de azkaban está nos meus favoritos da
-                saga harry potter, pela história dele que consegue te deixar
-                preso mt fácilmente, sendo também muito importante para a
-                história do nosso jovem bruxo de hogwarts.
-              </p>
-            </details>
-          </Artigos>
+          {cursos.map((curso) => {
+            return (
+              <Artigos
+                categoria={curso.categoria}
+                titulo={curso.titulo}
+                preco={curso.preco.toLocaleString("pt-br", {
+                  style: "currency",
+                  currency: "BRL",
+                })}
+                id={curso.id}
+              />
+            );
+          })}
         </div>
       </section>
     </StyledConteudo>

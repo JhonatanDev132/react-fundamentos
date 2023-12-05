@@ -18,19 +18,13 @@ const StyledArtigos = styled.article`
   }
 `;
 
-function Artigos({ imagem, icone, titulo, descricao, dataLivro, children }) {
+function Artigos(props) {
   return (
     <>
       <StyledArtigos>
-        <img src={imagem} alt="" />
-        <h3>
-          <span>{icone}</span>
-          {titulo}
-        </h3>
-        <time>{dataLivro}</time>
-        <p> {descricao} </p>
-
-        {children}
+        <h3>{props.categoria}</h3>
+        <p>Curso: {props.titulo}</p>
+        <p>Custa: {props.preco}</p>
       </StyledArtigos>
     </>
   );
