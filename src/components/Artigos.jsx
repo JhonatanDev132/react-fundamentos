@@ -18,13 +18,13 @@ const StyledArtigos = styled.article`
   }
 `;
 
-function Artigos() {
+function Artigos(props) {
   return (
     <>
-      <StyledArtigos>
-        <h3>Artigo 1</h3>
-        <p>Conteúdo artigo 1...</p>
-      </StyledArtigos>
+      <StyledArtigo>
+        <h3> {props.titulo} </h3>
+        <p> {props.descricao} </p>
+      </StyledArtigo>
     </>
   );
 }
