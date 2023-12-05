@@ -60,21 +60,52 @@ function Conteudo() {
             titulo="Harry Potter e a Pedra Filosofal"
             dataLivro={dataLivro[0]}
             descricao="Livro criado por J.K Rowlling."
-          />
+          >
+            <h4>Personagens:</h4>
+            <ul>
+              <li>Harry Potter</li>
+              <li>Rony Weasley</li>
+              <li>Hermione Granger</li>
+              <li>Alvo Dumbledore</li>
+              <li>Rubeus Hagrid</li>
+              <li>Minerva McGonagal</li>
+              <li>Severus Snape</li>
+              <li>Draco Malfoy</li>
+            </ul>
+          </Artigos>
           <Artigos
             imagem={imagem2}
             icone="🧙‍♀️"
             titulo="Harry Potter e a Câmara Secreta"
             dataLivro={dataLivro[1]}
             descricao="O Bixo ruim volta mais Jovem."
-          />
+          >
+            <h4>Mais personagens:</h4>
+            <ol>
+              <li>Tom Reddle</li>
+              <li>Murta que geme</li>
+              <li>Cho Yang</li>
+              <li>Gina Weasley</li>
+            </ol>
+          </Artigos>
           <Artigos
             imagem={imagem3}
             icone="🧹"
             titulo="Harry Potter e o Prisioneiro de Azkaban"
             dataLivro={dataLivro[2]}
             descricao="Bandido Mal corre da cadeia."
-          />
+          >
+            <h4>Opinião:</h4>
+            <details>
+              <summary>Filme:</summary>
+              <p>
+                Para mim o Prisioneiro de azkaban está nos meus favoritos da
+                saga harry potter, pela história dele que consegue te deixar
+                preso mt fácilmente, sendo também muito importante para a
+                história do nosso jovem bruxo de hogwarts.
+              </p>
+            </details>
+          </Artigos>
         </div>
       </section>
     </StyledConteudo>
