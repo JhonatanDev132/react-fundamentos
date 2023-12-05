@@ -44,14 +44,17 @@ function Conteudo() {
 
         <div>
           <Artigos
+            icone="😜"
             titulo="Senhor dos Anéis"
             descricao="Livro criado por Tokien"
           />
           <Artigos
+            icone="🐱‍🐉"
             titulo="Game of Thrones"
             descricao="Aventura maluca com gente sempre morrendo"
           />
           <Artigos
+            icone="🤷‍♀️"
             titulo="HTML5 e CSS3"
             descricao="Fonte de estudos para quem quer começar no Front-End"
           />

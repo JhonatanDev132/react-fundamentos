@@ -21,10 +21,10 @@ const StyledArtigos = styled.article`
 function Artigos(props) {
   return (
     <>
-      <StyledArtigo>
+      <StyledArtigos>
         <h3> {props.titulo} </h3>
         <p> {props.descricao} </p>
-      </StyledArtigo>
+      </StyledArtigos>
     </>
   );
 }
