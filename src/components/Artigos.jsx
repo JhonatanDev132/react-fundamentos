@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const StyledArtigos = styled.article`
@@ -19,9 +20,14 @@ const StyledArtigos = styled.article`
 `;
 
 function Artigos(props) {
+  const [cor, setCor] = useState("#cde7fd");
+
+  const mudarCor = () => {
+    setCor(cor === "lavender" ? "yellow" : "lavender");
+  };
   return (
     <>
-      <StyledArtigos>
+      <StyledArtigos onClick={mudarCor} style={{ backgroundColor: cor }}>
         <h3>{props.categoria}</h3>
         <p>Curso: {props.titulo}</p>
         <p>Custa: {props.preco}</p>

@@ -3,7 +3,7 @@ import Artigos from "./Artigos";
 import cursos from "../api/cursos.js";
 
 const StyledConteudo = styled.main`
-  width: 90dvw\ ;
+  width: 90dvw;
   position: relative;
   top: 5rem;
   margin: 1rem auto;
@@ -61,7 +61,7 @@ function Conteudo() {
                   style: "currency",
                   currency: "BRL",
                 })}
-                id={curso.id}
+                key={curso.id}
               />
             );
           })}
