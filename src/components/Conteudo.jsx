@@ -3,7 +3,7 @@ import Artigos from "./Artigos";
 import cursos from "../api/cursos.js";
 
 const StyledConteudo = styled.main`
-  width: 90dvw\ ;
+  width: 90dvw;
   position: relative;
   top: 5rem;
   margin: 1rem auto;
@@ -57,11 +57,8 @@ function Conteudo() {
               <Artigos
                 categoria={curso.categoria}
                 titulo={curso.titulo}
-                preco={curso.preco.toLocaleString("pt-br", {
-                  style: "currency",
-                  currency: "BRL",
-                })}
-                id={curso.id}
+                preco={curso.preco}
+                key={curso.id}
               />
             );
           })}
