@@ -1,10 +1,10 @@
 /* Conteudo.jsx */
-import Artigo from "./Artigos";
+import Artigo from "./Artigos.jsx";
 import styled from "styled-components";
 import cursos from "../api/cursos.js";
 import { useState } from "react";
 
-function Conteudo() {
+function Cursos() {
   /* Criando um gerenciador de state para mudança/filtro
     de categorias. Inicialmente, como começa como null pois ainda não
     temos uma escolha/seleção de categoria (aparece tudo). */
@@ -34,7 +34,7 @@ function Conteudo() {
 
   const quantidade = cursosFiltrados.length;
   return (
-    <StyledConteudo>
+    <StyledCursos>
       <h2>Conteúdo da aplicação</h2>
 
       <p>
@@ -87,11 +87,11 @@ function Conteudo() {
         }
         
       </div>
-    </StyledConteudo>
+    </StyledCursos>
   );
 }
 
-const StyledConteudo = styled.main`
+const StyledCursos = styled.main`
   width: 90vw;
   margin: 1rem auto;
   background-color: aliceblue;
@@ -136,4 +136,4 @@ const StyledConteudo = styled.main`
   }
 `;
 
-export default Conteudo;
+export default Cursos;
