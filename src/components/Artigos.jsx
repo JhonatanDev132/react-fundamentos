@@ -1,39 +1,35 @@
 import { useState } from "react";
 import styled from "styled-components";
 
-const StyledArtigos = styled.article`
-  padding: 15px;
-  margin: 0.5rem 0 0.5rem 0;
-  background-color: #cde7fd;
-  box-shadow: darkblue 0 0 1px inset;
+const StyledArtigo = styled.article`
+  background-color: lavender;
+  padding: 1rem;
+  margin: 0.5rem 0;
 
   h3 {
-    color: #43a7ff;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #43a7ff;
+    color: purple;
+    border-bottom: 1px solid;
   }
 
   p {
-    padding-top: 5px;
     font-size: 1.1rem;
   }
 `;
 
-function Artigos(props) {
-  const [cor, setCor] = useState("#cde7fd");
+function Artigo({categoria, titulo, preco}) { 
+  const [corP, setCor] = useState("lavender");
 
   const mudarCor = () => {
-    setCor(cor === "lavender" ? "yellow" : "lavender");
+    corP == "lavender" ? setCor("#ca5aca") :  setCor("lavender"); 
   };
+
   return (
-    <>
-      <StyledArtigos onClick={mudarCor} style={{ backgroundColor: cor }}>
-        <h3>{props.categoria}</h3>
-        <p>Curso: {props.titulo}</p>
-        <p>Custa: {props.preco}</p>
-      </StyledArtigos>
-    </>
+    <StyledArtigo onClick={mudarCor} style={{backgroundColor: corP}}>
+      <h3> {categoria}  </h3>
+      <p> {titulo} </p>
+      <p> {preco} </p>
+    </StyledArtigo>
   );
 }
 
-export default Artigos;
+export default Artigo;

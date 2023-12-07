@@ -1,23 +1,124 @@
+/* Conteudo.jsx */
+import Artigo from "./Artigos";
 import styled from "styled-components";
-import Artigos from "./Artigos";
 import cursos from "../api/cursos.js";
+import { useState } from "react";
+
+function Conteudo() {
+  /* Criando um gerenciador de state para mudança/filtro
+    de categorias. Inicialmente, como começa como null pois ainda não
+    temos uma escolha/seleção de categoria (aparece tudo). */
+  const [categoria, setCategoria] = useState(null)
+
+  const aplicarFiltro = (event) => {
+    // Capturamos (após o clique) o texto escrito em cada botão
+    const categoriaEscolhida = event.currentTarget.innerText;
+
+    // E em seguida passamos este texto para o state de categoria
+    setCategoria(categoriaEscolhida);
+  }
+
+  /* Gerando um novo array de cursos filtrados */
+  const cursosFiltrados = cursos.filter((curso) => {
+     /* Se o state categoria for igual a uma 
+    das categorias dos cursos, então será retornada
+    a lista de cursos daquela categoria. Senão, será 
+    retornada lista completa devido ao state ser null (ou seja,
+    não há uma categoria para filtrar) */
+    return curso.categoria === categoria || categoria === null;
+  })
+  
+  const limpaFiltro = () => {
+    return setCategoria(null)
+  }
+
+  return (
+    <StyledConteudo>
+      <h2>Conteúdo da aplicação</h2>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat,
+        labore? Officia quae quo a quas excepturi distinctio sint voluptas
+        labore iste veniam possimus facere adipisci sit repellat, voluptate,
+        expedita aspernatur.
+      </p>
+
+      <br />
+
+      <div className="filtros">
+        <p><b>Filtrar por: </b> <br /> 
+         <button onClick={aplicarFiltro}>Front-End</button> 
+         <button onClick={aplicarFiltro}>Back-End</button> 
+         <button onClick={aplicarFiltro}>Mobile</button>
+         <button onClick={aplicarFiltro}>Música</button>
+         <button onClick={aplicarFiltro}>Gastronomia</button>
+
+         { categoria && (
+         <button onClick={limpaFiltro}>Limpar Filtro 🧹</button>)}
+         </p>
+
+         {/* Renderização Condicional
+         o texto/tag/componente somente será renderizado/exibido 
+         se o state categoria existir (ou seja, não é null, undefined, false) */}
+         { categoria && <p> Você escolheu: <b>{categoria}</b> </p> }
+      </div>
+
+      <br />
+
+      <div className="artigos">
+        {
+          cursosFiltrados.map( curso => <Artigo
+            key={curso.id}
+            categoria={curso.categoria}
+            titulo={curso.titulo}
+            preco={curso.preco.toLocaleString("pt-br", {
+              style: "currency",
+              currency: "BRL"
+          })} 
+          /> )
+        }
+        
+      </div>
+    </StyledConteudo>
+  );
+}
 
 const StyledConteudo = styled.main`
-  width: 90dvw;
-  position: relative;
-  top: 5rem;
+  width: 90vw;
   margin: 1rem auto;
   background-color: aliceblue;
   padding: 1rem;
   box-shadow: darkblue 0 0 1px inset;
 
+  .filtros {
+    margin: auto;
+    text-align: center;
+    padding: 1rem 0;
+    border-top: solid 2px;
+    border-bottom: solid 2px;
+  }
+
+  button {
+    background-color: purple;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    margin: 0.5rem 0.5rem;
+  }
+
+  h2,
+  p {
+    padding: 0.2rem 0;
+  }
+
   @media screen and (min-width: 650px) {
     .artigos {
-      padding-top: 2rem;
       display: flex;
       margin: auto;
       flex-wrap: wrap;
-      width: 80%;
+      width: 80%; 
       justify-content: space-between;
 
       & article {
@@ -26,49 +127,5 @@ const StyledConteudo = styled.main`
     }
   }
 `;
-
-function Conteudo() {
-  return (
-    <StyledConteudo>
-      <h2>Teste</h2>
-      <section>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta iure
-          aliquid doloribus eveniet ipsam, debitis a, eligendi deserunt,
-          voluptatum qui explicabo officiis corrupti cupiditate voluptas.
-          Voluptates expedita ea quo dolorem? Nemo non voluptatem doloribus
-          quod, labore libero quo nesciunt sapiente iure illum tempore eum eius
-          nulla nihil possimus, perferendis aliquid magnam dignissimos voluptate
-          pariatur dolorem ex hic? Debitis, suscipit sapiente! Sit porro rerum
-          facere eos doloremque quia nemo facilis illo repellendus! Nobis iure
-          saepe deserunt quos, placeat beatae! Vitae mollitia molestiae enim
-          culpa quisquam dolores, sequi ab doloremque blanditiis eum! Cum
-          inventore magni suscipit id ipsa ad quae impedit minima, tempore
-          pariatur nihil! Neque ex quos est a ipsum porro at, voluptatum nam ut
-          fuga nihil atque, facere, vitae tenetur. Fugit voluptate officia rem?
-          In, vitae labore numquam earum officia amet cum facere placeat magni
-          porro esse iste, voluptatem hic. Aspernatur facilis sed tempore, ullam
-          voluptate modi sint quas iure.
-        </p>
-
-        <div className="artigos">
-          {cursos.map((curso) => {
-            return (
-              <Artigos
-                categoria={curso.categoria}
-                titulo={curso.titulo}
-                preco={curso.preco.toLocaleString("pt-br", {
-                  style: "currency",
-                  currency: "BRL",
-                })}
-                key={curso.id}
-              />
-            );
-          })}
-        </div>
-      </section>
-    </StyledConteudo>
-  );
-}
 
 export default Conteudo;

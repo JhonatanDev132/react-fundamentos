@@ -1,3 +1,4 @@
+/* Menu.jsx */
 import styled from "styled-components";
 
 const StyledMenu = styled.nav`
@@ -11,12 +12,16 @@ const StyledMenu = styled.nav`
     text-decoration: none;
     width: 30%;
     height: 40px;
+    display: flex;
     justify-content: center;
     align-items: center;
     transition: transform 100ms;
 
+    /* & -> referência ao
+    seletor pai (a) */
     &:hover {
-      color: gray;
+      background-color: pink;
+      color: black;
       transform: scale(1.05);
     }
   }
