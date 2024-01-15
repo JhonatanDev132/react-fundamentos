@@ -47,13 +47,13 @@ function Produtos() {
         <article>
             <h2>Produtos</h2>
 
-            {produtos.map( produto => {
+            { loading ? (<p>Carregando...</p>) : (produto.map( produto => {
                 return <section key={produtoid}>
                     <h3>{produto.title}</h3>
                     <p>{produto.price}</p>
                     <p>{produto.description}</p>
                 </section>
-            })}
+            })) }
 
         </article>
     );
