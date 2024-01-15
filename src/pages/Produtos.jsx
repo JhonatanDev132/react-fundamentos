@@ -9,6 +9,9 @@ function Produtos() {
 
     const [produtos, setProdutos] = useState([]);
 
+    // Ztate de loading (por padrão, inicia ativado/true)
+    const [loading, setLoading] = useState(true)
+
     /* Gerenciando o efeito colateral
     do componente para o carregamento
     dos dados da API. 
@@ -45,7 +48,7 @@ function Produtos() {
             <h2>Produtos</h2>
 
             {produtos.map( produto => {
-                return <section key={produto.id}>
+                return <section key={produtoid}>
                     <h3>{produto.title}</h3>
                     <p>{produto.price}</p>
                     <p>{produto.description}</p>
