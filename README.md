@@ -11,6 +11,16 @@ colaterais ocorram no momento adequado do ciclo de vida do
 componente, evitando execuções repetitivas e problemas de
 carregamento e desempenho.
 
+### Sobre o array de dependências 
+
+- Array vazio []: o efeito será executado apenas uma vez após a 
+montagem do componente
+
+- Array com elementos/variáveis [variável]: o efeito será
+executado quando os elementos/variáveis mudarem.
+
+---
+
 ## 11-navegacao-usando-rotas
 
 O React suporta a navegação/links como Single Page Application
