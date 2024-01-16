@@ -33,6 +33,7 @@ function Produtos() {
             const dados = await resposta.json();
             console.log(dados);
             setProdutos(dados);
+            setLoading(false)
         } catch (error) {
             console.error("Houve um erro: "+error);
         }
@@ -48,7 +49,7 @@ function Produtos() {
         <article>
             <h2>Produtos</h2>
 
-            { loading ? (<p style={{textAlign: "center"}}> <img src={imagemLoading} alt="Carregando..." /> </p>) : (produto.map( produto => {
+            { loading ? (<p style={{textAlign: "center"}}> <img src={imagemLoading} alt="Carregando..." /> </p>) : (produtos.map( produto => {
                 return (<section key={produto.id}>
                     <h3>{produto.title}</h3>
                     <p>{produto.price}</p>

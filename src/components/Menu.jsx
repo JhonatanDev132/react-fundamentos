@@ -33,7 +33,7 @@ function Menu() {
     <StyledMenu>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/produtos">Produtos</NavLink>
-      <NavLink to="/contato">Contto</NavLink>
+      <NavLink to="/contato">Contato</NavLink>
     </StyledMenu>
   );
 }
