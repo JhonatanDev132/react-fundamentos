@@ -1,6 +1,7 @@
 import Cabecalho from "./components/Cabecalho";
 import Rodape from "./components/Rodape";
 import Home from "./pages/Home";
+import DetalhesProduto from "./pages/DetalhesProduto";
 import Contato from "./pages/Contato";
 import Produtos from "./pages/Produtos";
 import Container from "./components/Container";
@@ -17,7 +18,7 @@ function App() {
         <Routes>
           <Route Component={Home} exact path="/"/>
           <Route Component={Produtos} path="/produtos"/>
-          <Route Component={DetalhesProdutos} path="/produtos/produtos.id" />
+          <Route Component={DetalhesProduto} path="/produtos/:id" />
           <Route Component={Contato} path="/contato"/>
         </Routes>
       </Container>
