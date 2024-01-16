@@ -1,5 +1,6 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import imagemLoading from "../assets/loading.svg"
+import { Link } from "react-router-dom";
 
 function Produtos() {
     /* O state "produtos" é iniciado como um array vazio.
@@ -9,7 +10,7 @@ function Produtos() {
 
     const [produtos, setProdutos] = useState([]);
 
-    // Ztate de loading (por padrão, inicia ativado/true)
+    // State de loading (por padrão, inicia ativado/true)
     const [loading, setLoading] = useState(true)
 
     /* Gerenciando o efeito colateral
@@ -47,12 +48,13 @@ function Produtos() {
         <article>
             <h2>Produtos</h2>
 
-            { loading ? (<p>Carregando...</p>) : (produto.map( produto => {
-                return <section key={produto.id}>
+            { loading ? (<p style={{textAlign: "center"}}> <img src={imagemLoading} alt="Carregando..." /> </p>) : (produto.map( produto => {
+                return (<section key={produto.id}>
                     <h3>{produto.title}</h3>
                     <p>{produto.price}</p>
                     <p>{produto.description}</p>
-                </section>
+                    <p> <Link to={`/produtos/${produto.id}`}>Ver detalhes</Link> </p>
+                </section>)
             })) }
 
         </article>
