@@ -48,7 +48,7 @@ function Produtos() {
             <h2>Produtos</h2>
 
             { loading ? (<p>Carregando...</p>) : (produto.map( produto => {
-                return <section key={produtoid}>
+                return <section key={produto.id}>
                     <h3>{produto.title}</h3>
                     <p>{produto.price}</p>
                     <p>{produto.description}</p>
