@@ -17,6 +17,7 @@ function App() {
         <Routes>
           <Route Component={Home} exact path="/"/>
           <Route Component={Produtos} path="/produtos"/>
+          <Route Component={DetalhesProdutos} path="/produtos/produtos.id" />
           <Route Component={Contato} path="/contato"/>
         </Routes>
       </Container>
